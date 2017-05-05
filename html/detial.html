@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>叮叮书城</title>
+    <!-- Bootstrap -->
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/detial.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="head">
+        <div class="container myhead">
+            <div class="row">
+                <div class="head_left col-md-2 col-sm-2 hidden-xs">
+                    <a href="#">登录</a>
+                    <i>|</i>
+                    <a href="#">注册</a>
+                </div>
+                <div class="head_right col-md-2 col-sm-2 hidden-xs pull-right">
+                    <span>购物车</span>
+                    <i>0</i>
+                    <span>件</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section class="top">
+        <div class="container mytop">
+            <div class="top_head clearfix">
+                <div class="logo col-md-4">
+                    <a href="../index.html" class="col-md-6"><img src="../images/logo.png" alt=""></a>
+                    <i class="col-md-6">叮叮网</i>
+                </div>
+                <div class="search col-md-5 pull-right">
+                    <input type="text" id="pkeyword" class="col-md-8">
+                    <input type="button" id="psbt" class="col-md-4">
+                    <span class="col-md-12">
+                        热搜: 
+                        <a href="#">华尔街之狼</a> 
+                        <a href="#">500个励志成功人物</a>
+                    </span>
+                </div>
+            </div>
+            <!-- nav -->
+            <nav class="navbar navbar-myDefault navbar-static-top" style="height:40px">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="./list.html" class="allproduct">全部商品分类</a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-8" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand visible-xs" href="#">首页</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-8" aria-expanded="false" style="height: 1px;">
+                        <ul class="nav navbar-nav">
+                            <li><a href="../index.html">首页</a></li>
+                            <li><a href="#">热销书籍</a></li>
+                            <li><a href="#">团购秒杀</a></li>
+                            <li><a href="#">拼团秒杀</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+            </nav>
+        </div>
+    </section>
+
+
+
+    <section class='detials'>
+        <div class="container mydetial">
+            <div class="picture">
+                <img src="../images/p9.jpg" alt="">
+            </div>
+            <div class="info">
+                <h3>皮特猫</h3>
+                <p>皮特猫皮特猫皮特猫皮特猫皮特猫皮特猫</p>
+                <div class="price">市场价: <b>260.00</b></div>
+                <div class="type">装订类型:<i>精装</i><i>平装</i></div>
+                <div class="num"><span>数量:</span> <i class='less'> - </i> <input type="text" name="" id='num' value='1'><i class="add"> + </i></div>
+                <div class="btns">
+                    <inpyt type='button' id='buy'>立即购买</inpyt>
+                    <inpyt type='button' id='car'>加入购物车</inpyt>
+                </div>
+            </div>
+            <div class="other">
+                <h4>精品推荐</h4>
+                <ul>
+                    <li>
+                        <a href="#"><img src="../images/p3.jpg" alt=""></a>
+                        <div class="info">
+                            <span class='p_name'>活着为了讲述</span>
+                            <span class='p_price'><i>99.9</i>元</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="container myfooter">
+            <div class="block_picture">
+                <img src="../images/T1ZjhhFp.jpg" alt="" style="width:100%;height:100%">
+            </div>
+            <div class="footerlist row">
+                <dl class="col-md-2">
+                    <dt>购物指南</dt>
+                    <dd>免费注册</dd>
+                    <dd>开通支付宝</dd>
+                    <dd>支付宝充值</dd>
+                </dl>
+                <dl class="col-md-2">
+                    <dt>购物保障</dt>
+                    <dd>发票售后</dd>
+                    <dd>售后规矩</dd>
+                    <dd>缺货赔付</dd>
+                </dl>
+                <dl class="col-md-2">
+                    <dt>支付方式</dt>
+                    <dd>快捷支付</dd>
+                    <dd>信用卡</dd>
+                    <dd>余额宝</dd>
+                    <dd>后到付款</dd>
+                </dl>
+                <dl class="col-md-2">
+                    <dt>商家服务</dt>
+                    <dd>商家入驻</dd>
+                    <dd>商家中心</dd>
+                    <dd>物流服务</dd>
+                    <dd>运营服务</dd>
+                </dl>
+                <div class="erm col-md-2">
+                    <img src="../images/ma.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../js/BookStore.js"></script>
+</body>
+
+</html>
+
+
+<script>
+    
+    $(function() {
+        $('.type').find('i').on('click', function() {
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    })
+
+</script>
