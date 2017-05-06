@@ -559,6 +559,7 @@
 
             var userName = p.split("&")[0].split("=")[1];
             // console.log($("#a1"));
+            
             $("#a1").text(userName);
             $("#a2").text('退出');
 
@@ -572,6 +573,12 @@
         } else {
             $("#a1").text('登录');
             $("#a2").text('注册');
+
+
+            $('#a2').on('click', function() {
+
+                location.href = 'http://localhost/BookStores/html/register.html';
+            });
             
         }
 

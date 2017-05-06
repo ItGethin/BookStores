@@ -87,7 +87,7 @@
         <div class="container myFooter">
             叮叮集团网站：
             <a href="#">叮叮网</a>
-            <a href="#">ME&CITY</a>
+            <a href="#">ME&amp;CITY</a>
             <a href="#">嘻嘻网</a>
             <a href="#">哈哈网</a>
         </div>
@@ -111,7 +111,7 @@
 
             var para = $("#myform").serialize(); 
 
-            console.log(para);
+            // console.log(para);
             $.ajax({
                 url:"http://localhost/BookStores/php/login.php",
                 type:"post",
@@ -129,6 +129,8 @@
                      // console.log(p);
 
                      window.location.href = "../index.html";
+                    } else {
+                        alert('登录失败');
                     }
 
                 }

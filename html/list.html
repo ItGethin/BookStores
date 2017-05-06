@@ -24,9 +24,9 @@
         <div class="container myhead">
             <div class="row">
                 <div class="head_left col-md-2 col-sm-2 hidden-xs">
-                    <a href="#">登录</a>
+                    <a href="#" id='a1'>登录</a>
                     <i>|</i>
-                    <a href="#">注册</a>
+                    <a href="#" id='a2'>注册</a>
                 </div>
                 <div class="head_right col-md-2 col-sm-2 hidden-xs pull-right">
                     <span>购物车</span>
@@ -108,7 +108,7 @@
                 <a href="">价格</a>
                 <a href="">人气</a>
             </div>
-            <ul class='listsContent clearfix'>
+            <ul class='listsContent clearfix' id='list'>
             </ul>
         </div>
     </section>
@@ -162,20 +162,17 @@
 
         var urlinfo = window.location.href; //获取url
         var userName = urlinfo.split('?')[1].split('=')[1]; //拆分url得到”=”後面的参数
-        console.log(decodeURI(userName));
+        // console.log(decodeURI(userName));
 
         var name = decodeURI(userName); 
-
-
-
         $.get('http://localhost/BookStores/php/list.php?b_name=' + name, function(res) {
-            console.log(res);
+            // console.log(res);
 
             var data = res;
 
             for (var i = 0; i < data.length; i++) {
 
-                $li = '<li><a href=""><img src="../' + data[i].b_img + '" alt=""></a><div class="info"><span>' + data[i].b_name + '</span><span class="price"><i>' + data[i].b_price + '</i>元</span></div></li>';
+                $li = '<li data-name="'+data[i].b_name+'"><a href="javascript:void(0)"><img src="../' + data[i].b_img + '" alt=""></a><div class="info"><span>' + data[i].b_name + '</span><span class="price"><i>' + data[i].b_price + '</i>元</span></div></li>';
 
                 $('.listsContent').append($li);
             }
@@ -183,6 +180,57 @@
         }, 'json');
 
     });
+
+
+
+
+
+     var p = window.sessionStorage.getItem("userName");
+
+        if (p != null) {
+
+            var userName = p.split("&")[0].split("=")[1];
+            // console.log($("#a1"));
+            
+            $("#a1").text(userName);
+            $("#a2").text('退出');
+
+
+            $("#a2").on("click",function(){
+
+                window.sessionStorage.removeItem("userName");
+                $("#a1").text('登录');
+                $("#a2").text('注册');
+            });
+        } else {
+            $("#a1").text('登录');
+            $("#a2").text('注册');
+
+
+            $('#a2').on('click', function() {
+
+                location.href = 'http://localhost/BookStores/html/register.html';
+            });
+            
+        }
+
+
+        $("#list").on('click', 'li', function() {
+            console.log($(this).data('name'));
+
+            var name = $(this).data('name');
+
+
+            location.href = 'http://localhost/BookStores/html/detial.html?b_name=' + name;
+
+            // $.post('../php/detial.php', {name: name}, function(res) {
+
+            //     console.log(res);
+            // }, 'json');
+
+        });
+
+
     </script>
 </body>
 

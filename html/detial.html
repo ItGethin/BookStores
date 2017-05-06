@@ -24,9 +24,9 @@
         <div class="container myhead">
             <div class="row">
                 <div class="head_left col-md-2 col-sm-2 hidden-xs">
-                    <a href="#">登录</a>
+                    <a href="#" id='a1'>登录</a>
                     <i>|</i>
-                    <a href="#">注册</a>
+                    <a href="#" id='a2'>注册</a>
                 </div>
                 <div class="head_right col-md-2 col-sm-2 hidden-xs pull-right">
                     <span>购物车</span>
@@ -159,21 +159,70 @@
     </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/template-web.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../js/BookStore.js"></script>
-</body>
 
+    <script type='text/html' id='tap-li'>
+        
+
+    </script>
+
+    <script>
+        $(function() {
+            $('.type').find('i').on('click', function() {
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+
+
+            var p = window.sessionStorage.getItem("userName");
+
+            if (p != null) {
+
+                var userName = p.split("&")[0].split("=")[1];
+                // console.log($("#a1"));
+                
+                $("#a1").text(userName);
+                $("#a2").text('退出');
+
+
+                $("#a2").on("click",function(){
+
+                    window.sessionStorage.removeItem("userName");
+                    $("#a1").text('登录');
+                    $("#a2").text('注册');
+                });
+            } else {
+                $("#a1").text('登录');
+                $("#a2").text('注册');
+
+
+                $('#a2').on('click', function() {
+
+                    location.href = 'http://localhost/BookStores/html/register.html';
+                });
+                
+            }
+
+
+            var urlinfo = window.location.href; //获取url
+            var name = urlinfo.split('?')[1].split('=')[1]; //拆分url得到”=”後面的参数
+
+            // console.log(decodeURI(name));
+
+            var name = decodeURI(name);
+            $.get('../php/detial.php?name=' + name, function(res) {
+
+                    console.log(res);
+                }, 'json');
+
+        });
+</script>
+
+</body>
 </html>
 
 
-<script>
-    
-    $(function() {
-        $('.type').find('i').on('click', function() {
-            $(this).addClass('active').siblings().removeClass('active');
-        })
-    })
 
-</script>
